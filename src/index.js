@@ -4,8 +4,8 @@ import './utils/style/index.css'
 import reportWebVitals from './reportWebVitals'
 import Home from './pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import SignIn from './pages/SignIn'
-import User from './pages/User'
+import Login from './pages/Login'
+import User from './pages/Profile'
 import Footer from './components/Footer'
 import Header from './components/Header'
 
@@ -16,8 +16,8 @@ ReactDOM.render(
         <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/sign-in" element={<SignIn />} />
-                <Route path="/user" element={<User />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<User />} />
             </Routes>
             <Footer />
         </BrowserRouter>
