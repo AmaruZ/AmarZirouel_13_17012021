@@ -11,6 +11,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #12002b;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main {
@@ -126,6 +133,7 @@ body {
 .features {
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 @media (min-width: 920px) {
@@ -200,18 +208,6 @@ body {
 .input-wrapper input {
   padding: 5px;
   font-size: 1.2rem;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  border-top: 2px solid #ccc;
-  padding: 2rem 0 1.5rem;
-}
-
-.footer-text {
-  margin: 0;
-  padding: 0;
 }
 
 .account {
