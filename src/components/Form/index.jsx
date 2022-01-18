@@ -22,7 +22,7 @@ function Form({icon, title}) {
                 <Link to="/profile" className="sign-in-button">
                     Sign In
                 </Link>
-                {/* <button className="sign-in-button">Sign In</button> */}
+                 <button className="sign-in-button">Sign In</button> 
             </form>
         </>
     )
