@@ -8,10 +8,12 @@ import Login from './pages/Login'
 import User from './pages/Profile'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import { Provider } from 'react-redux'
+import store from './utils/store'
 
 ReactDOM.render(
+    <Provider store={store}>
     <React.StrictMode>
-
         <BrowserRouter>
         <Header />
             <Routes>
@@ -21,8 +23,9 @@ ReactDOM.render(
             </Routes>
             <Footer />
         </BrowserRouter>
-
-    </React.StrictMode>,
+</React.StrictMode>
+    </Provider>
+,
     document.getElementById('root')
 )
 
