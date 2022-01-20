@@ -1,6 +1,6 @@
-export const selectUser =  (state) => {
-    return state.user
+export const selectProfile = (state) => {
+    return state.profile
 }
-export const selectLogin =  (state) => {
+export const selectLogin = (state) => {
     return state.login
 }

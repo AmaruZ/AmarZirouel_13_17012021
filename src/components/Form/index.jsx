@@ -1,4 +1,4 @@
-import { Link, Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
 import { signIn } from '../../features/login'
 import { selectLogin } from '../../utils/selectors'
@@ -15,7 +15,6 @@ function Form({ icon, title }) {
         <Navigate to="/profile" />
     ) : (
         <>
-            {' '}
             <i className={icon}></i>
             <h1>{title}</h1>
             <form
@@ -45,9 +44,6 @@ function Form({ icon, title }) {
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
 
-                <Link to="/profile" className="sign-in-button">
-                    Sign In
-                </Link>
                 <button type="submit" className="sign-in-button">
                     Sign In
                 </button>

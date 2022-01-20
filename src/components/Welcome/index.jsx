@@ -1,16 +1,41 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { editProfile } from '../../features/profile'
 
-function Welcome() {
+function Welcome({ firstName, lastName }) {
     const [isEditing, setEdit] = useState(false)
+    const dispatch = useDispatch()
+    const firstNameRef = useRef()
+    const lastNameRef = useRef()
 
     return (
         <div className="header">
             {isEditing ? (
                 <>
                     <h1>Welcome back</h1>
-                    <input type="text" placeholder="Tony" />
-                    <input type="text" placeholder="Jarvis" />
-                    <button onClick={() => setEdit(false)}>Save</button>
+                    <input
+                        type="text"
+                        placeholder={firstName}
+                        ref={firstNameRef}
+                    />
+                    <input
+                        type="text"
+                        placeholder={lastName}
+                        ref={lastNameRef}
+                    />
+                    <button
+                        onClick={() => {
+                            dispatch(
+                                editProfile(
+                                    firstNameRef.current.value,
+                                    lastNameRef.current.value
+                                )
+                            )
+                            setEdit(false)
+                        }}
+                    >
+                        Save
+                    </button>
                     <button onClick={() => setEdit(false)}>Cancel</button>
                 </>
             ) : (
@@ -18,7 +43,7 @@ function Welcome() {
                     <h1>
                         Welcome back
                         <br />
-                        Tony Jarvis!
+                        {`${firstName} ${lastName}`}
                     </h1>
                     <button
                         className="edit-button"

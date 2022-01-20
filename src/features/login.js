@@ -66,8 +66,16 @@ const {actions, reducer} = createSlice({
         return;
       }
       return;
+    },
+    logout: draft => {
+      draft.status = 'void'
+      draft.isLogged = false;
+      draft.token = "";
+      return;
     }
   }
 });
+
+export const {logout} = actions;
 
 export default reducer;

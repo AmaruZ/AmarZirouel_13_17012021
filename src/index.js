@@ -13,19 +13,18 @@ import store from './utils/store'
 
 ReactDOM.render(
     <Provider store={store}>
-    <React.StrictMode>
-        <BrowserRouter>
-        <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/profile" element={<User />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
-</React.StrictMode>
-    </Provider>
-,
+        <React.StrictMode>
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/profile" element={<User />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </React.StrictMode>
+    </Provider>,
     document.getElementById('root')
 )
 
