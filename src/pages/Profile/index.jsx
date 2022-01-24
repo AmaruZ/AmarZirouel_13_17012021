@@ -2,11 +2,17 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
+import styled from 'styled-components'
 import Account from '../../components/Account'
 import Loader from '../../components/Loader'
 import Welcome from '../../components/Welcome'
 import { fetchOrUpdateProfile } from '../../features/profile'
 import { selectLogin, selectProfile } from '../../utils/selectors'
+import colors from '../../utils/style/colors'
+
+const ProfileWrapper = styled.main`
+    background: ${colors.lightGrey};
+`
 
 function Profile() {
     const login = useSelector(selectLogin)
@@ -20,8 +26,8 @@ function Profile() {
     return login.isLogged ? (
         profile.loading ? (
             <Loader />
-        ) : ( 
-            <main className="main bg-dark">
+        ) : (
+            <ProfileWrapper>
                 <Welcome
                     firstName={profile.firstName}
                     lastName={profile.lastName}
@@ -39,7 +45,7 @@ function Profile() {
                     name="Argent Bank Credit Card (x8349)"
                     balance="$184.30"
                 />
-            </main>
+            </ProfileWrapper>
         )
     ) : (
         <Navigate to={'/login'} />

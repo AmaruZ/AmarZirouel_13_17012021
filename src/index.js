@@ -10,11 +10,13 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import { Provider } from 'react-redux'
 import store from './utils/store'
+import GlobalStyle from './utils/style/globalStyles'
 
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>
             <BrowserRouter>
+                <GlobalStyle />
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
