@@ -79,6 +79,9 @@ const { actions, reducer } = createSlice({
                 case 'resolved':
                     draft.status = 'updating'
                     return
+                case 'edited':
+                    draft.status = 'updating'
+                    return
             }
         },
         resolved: (draft, action) => {
@@ -114,6 +117,9 @@ const { actions, reducer } = createSlice({
                     return
                 }
                 case 'resolved':
+                    draft.status = 'updating'
+                    return
+                case 'edited':
                     draft.status = 'updating'
                     return
             }
