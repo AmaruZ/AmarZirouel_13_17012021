@@ -16,27 +16,40 @@ const WelcomeTitle = styled.h1`
     color: ${colors.black};
     font-weight: 600;
 `
+const EditInput = styled(StyledInput)`
+    margin: 0 15px;
+    @media (max-width: 720px) {
+        margin: 5px 0;
+    }
+`
 
 const EditButton = styled(StyledButton)`
     color: ${colors.violet};
     background: white;
     width: 150px;
-    margin-top: 15px;
-    align-self: ${(props) => props.flex || 'flex-start'};
+    margin: 15px 15px;
     &:active {
         background-color: ${colors.violet};
         color: white;
+    }
+    @media (max-width: 720px) {
+        margin: 10px 0;
     }
 `
 
 const EditContainer = styled.div`
     display: flex;
+    flex-direction: column;
 `
 
 const EditWrapper = styled.div`
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     margin: 0 20px;
+    @media (max-width: 720px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 function Welcome({ firstName, lastName }) {
@@ -52,11 +65,18 @@ function Welcome({ firstName, lastName }) {
                     <WelcomeTitle>Welcome back</WelcomeTitle>
                     <EditContainer>
                         <EditWrapper>
-                            <StyledInput
+                            <EditInput
                                 type="text"
                                 placeholder={firstName}
                                 ref={firstNameRef}
                             />
+                            <EditInput
+                                type="text"
+                                placeholder={lastName}
+                                ref={lastNameRef}
+                            />
+                        </EditWrapper>
+                        <EditWrapper>
                             <EditButton
                                 onClick={() => {
                                     dispatch(
@@ -71,13 +91,6 @@ function Welcome({ firstName, lastName }) {
                             >
                                 Save
                             </EditButton>
-                        </EditWrapper>
-                        <EditWrapper>
-                            <StyledInput
-                                type="text"
-                                placeholder={lastName}
-                                ref={lastNameRef}
-                            />
 
                             <EditButton onClick={() => setEdit(false)}>
                                 Cancel
@@ -93,7 +106,7 @@ function Welcome({ firstName, lastName }) {
                         {`${firstName} ${lastName}`}
                     </WelcomeTitle>
                     <StyledButton
-                        className="edit-button"
+                        style={{ marginBottom: '15px' }}
                         onClick={() => setEdit(true)}
                     >
                         Edit Name

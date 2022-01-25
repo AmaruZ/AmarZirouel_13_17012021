@@ -8,10 +8,12 @@ import Loader from '../../components/Loader'
 import Welcome from '../../components/Welcome'
 import { fetchOrUpdateProfile } from '../../features/profile'
 import { selectLogin, selectProfile } from '../../utils/selectors'
+import { ScreenReaderOnlyH2 } from '../../utils/style/Atoms'
 import colors from '../../utils/style/colors'
 
 const ProfileWrapper = styled.main`
     background: ${colors.lightGrey};
+    flex: 1;
 `
 
 function Profile() {
@@ -32,7 +34,7 @@ function Profile() {
                     firstName={profile.firstName}
                     lastName={profile.lastName}
                 />
-                <h2 className="sr-only">Accounts</h2>
+                <ScreenReaderOnlyH2>Accounts</ScreenReaderOnlyH2>
                 <Account
                     name="Argent Bank Checking (x8349)"
                     balance="$2,082.79"

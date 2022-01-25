@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 import Feature from '../../components/Feature'
 import Hero from '../../components/Hero'
+import { ScreenReaderOnlyH2 } from '../../utils/style/Atoms'
+
+const HomeContainer = styled.main`
+    flex: 1;
+`
 
 const FeaturesContainer = styled.section`
     display: flex;
@@ -15,12 +20,12 @@ const FeaturesContainer = styled.section`
 function Home() {
     const subtitles = ['No fees', 'No minimum deposit', 'High interest rates']
     return (
-        <main>
+        <HomeContainer>
             <Hero subtitles={subtitles}>
                 Open a savings account with Argent Bank today!
             </Hero>
             <FeaturesContainer>
-                <h2 className="sr-only">Features</h2>
+                <ScreenReaderOnlyH2>Features</ScreenReaderOnlyH2>
                 <Feature type="Chat" title="You are our #1 priority">
                     Need to talk to a representative? You can get in touch
                     through our 24/7 chat or through a phone call in less than 5
@@ -35,7 +40,7 @@ function Home() {
                     money is always safe.
                 </Feature>
             </FeaturesContainer>
-        </main>
+        </HomeContainer>
     )
 }
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import backgroundImage from '../../assets/bank-tree.jpeg'
+import { ScreenReaderOnlyH2 } from '../../utils/style/Atoms'
 
 const HeroContainer = styled.div`
     background-image: url(${backgroundImage});
@@ -61,7 +62,7 @@ function Hero({ subtitles, children }) {
     return (
         <HeroContainer>
             <HeroContent>
-                <h2 className="sr-only">Promoted Content</h2>
+                <ScreenReaderOnlyH2>Promoted Content</ScreenReaderOnlyH2>
                 {listSubtitles}
                 <HeroText className="text">{children}</HeroText>
             </HeroContent>

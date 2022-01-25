@@ -39,6 +39,7 @@ const { actions, reducer } = createSlice({
                 default:
                     return
                 case 'void':
+                    draft.error = null
                     draft.status = 'pending'
                     return
                 case 'rejected': {
@@ -47,6 +48,7 @@ const { actions, reducer } = createSlice({
                     return
                 }
                 case 'resolved':
+                    draft.error = null
                     draft.status = 'updating'
                     return
             }

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './utils/style/index.css'
 import reportWebVitals from './reportWebVitals'
 import Home from './pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'

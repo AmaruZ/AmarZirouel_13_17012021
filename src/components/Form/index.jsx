@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 import { StyledButton, StyledInput } from '../../utils/style/Atoms'
+import Loader from '../Loader'
 
 const IconWrapper = styled.span`
     width: 5rem;
@@ -15,6 +16,11 @@ const IconWrapper = styled.span`
 `
 const BigUserIcon = styled(FontAwesomeIcon)`
     font-size: 5rem;
+`
+
+const FormContainer = styled.form`
+    display: flex;
+    flex-direction: column;
 `
 
 const InputWrapper = styled.div`
@@ -29,6 +35,7 @@ const InputWrapper = styled.div`
 `
 const InputRemember = styled.div`
     display: flex;
+    align-self: flex-start;
     margin-bottom: 1.2rem;
     & label {
         margin-left: 0.25rem;
@@ -50,7 +57,7 @@ function Form() {
                 <BigUserIcon icon={faUserCircle} color="#DFE6EC" />
             </IconWrapper>
             <h1>Sign In</h1>
-            <form
+            <FormContainer
                 onSubmit={(e) => {
                     e.preventDefault()
                     dispatch(signIn(username, password))
@@ -78,7 +85,22 @@ function Form() {
                 </InputRemember>
 
                 <StyledButton type="submit">Sign In</StyledButton>
-            </form>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        marginTop: '20px',
+                    }}
+                >
+                    {(login.status === 'pending' ||
+                        login.status === 'updating') && <Loader />}
+
+                    <span style={{ color: 'red', fontWeight: '600' }}>
+                        {login.error && login.error}
+                    </span>
+                </div>
+            </FormContainer>
         </>
     )
 }
