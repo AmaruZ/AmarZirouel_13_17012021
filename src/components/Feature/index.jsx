@@ -22,6 +22,15 @@ const FeatureTitle = styled.h3`
     margin-bottom: 0.5rem;
 `
 
+/**
+ * Add a feature in home page
+ * @param {Object} props
+ * @param {String} props.type
+ * @param {String} props.title
+ * @param {String} props.children
+ * @returns  {JSX.Element}
+ */
+
 function Feature({ type, title, children }) {
     const icon = {
         Chat: iconChat,

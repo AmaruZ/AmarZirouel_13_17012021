@@ -11,6 +11,12 @@ const initialState = {
     loading: true,
 }
 
+/**
+ * Get the user's profile
+ * @param {String} token
+ * @returns
+ */
+
 export function fetchOrUpdateProfile(token) {
     return async (dispatch, getState) => {
         const status = selectProfile(getState()).status
@@ -33,6 +39,13 @@ export function fetchOrUpdateProfile(token) {
         }
     }
 }
+
+/**
+ * Edit the user's profile
+ * @param {String} firstName
+ * @param {String} lastName
+ * @returns
+ */
 
 export function editProfile(firstName, lastName) {
     return async (dispatch, getState) => {

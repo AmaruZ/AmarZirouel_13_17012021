@@ -27,7 +27,7 @@ const EditButton = styled(StyledButton)`
     color: ${colors.violet};
     background: white;
     width: 150px;
-    margin: 15px 15px;
+    margin: 15px 15px 30px 15px;
     &:active {
         background-color: ${colors.violet};
         color: white;
@@ -52,6 +52,14 @@ const EditWrapper = styled.div`
     }
 `
 
+/**
+ * Display the first name and the last name in profile page
+ * @param {Object} props
+ * @param {String} props.firstName
+ * @param {String} props.lastName
+ * @returns {JSX.Element}
+ */
+
 function Welcome({ firstName, lastName }) {
     const [isEditing, setEdit] = useState(false)
     const dispatch = useDispatch()
@@ -59,7 +67,7 @@ function Welcome({ firstName, lastName }) {
     const lastNameRef = useRef()
 
     return (
-        <WelcomeContainer className="header">
+        <WelcomeContainer>
             {isEditing ? (
                 <>
                     <WelcomeTitle>Welcome back</WelcomeTitle>
@@ -106,7 +114,7 @@ function Welcome({ firstName, lastName }) {
                         {`${firstName} ${lastName}`}
                     </WelcomeTitle>
                     <StyledButton
-                        style={{ marginBottom: '15px' }}
+                        style={{ marginBottom: '30px' }}
                         onClick={() => setEdit(true)}
                     >
                         Edit Name

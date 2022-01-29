@@ -9,6 +9,13 @@ const initialState = {
     error: null,
 }
 
+/**
+ * Allow a user to sign in if usernamer and password are correct
+ * @param {String} username
+ * @param {String} password
+ * @returns
+ */
+
 export function signIn(username, password) {
     return async (dispatch, getState) => {
         const status = selectLogin(getState()).status

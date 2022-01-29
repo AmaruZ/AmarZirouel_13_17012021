@@ -49,6 +49,14 @@ const AccountDescription = styled.p`
     }
 `
 
+/**
+ * Add an account in Profile page
+ * @param {Object} props
+ * @param {String} props.name
+ * @param {String | Number} props.balance
+ * @returns {JSX.Element}
+ */
+
 function Account({ name, balance }) {
     return (
         <AccountContainer>
@@ -77,18 +85,6 @@ export default Account
 //     .transaction-button {
 //         width: 200px;
 //     }
-// }
-
-// .account-amount {
-
-// }
-
-// .account-amount-description {
-//
-// }
-
-// .account-title {
-
 // }
 
 // .account-content-wrapper {

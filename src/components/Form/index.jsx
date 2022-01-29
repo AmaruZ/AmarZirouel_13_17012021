@@ -42,6 +42,11 @@ const InputRemember = styled.div`
     }
 `
 
+/**
+ * Create the login form
+ * @returns {JSX.Element}
+ */
+
 function Form() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')

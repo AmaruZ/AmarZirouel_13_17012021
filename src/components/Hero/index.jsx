@@ -53,6 +53,14 @@ const HeroText = styled.p`
     }
 `
 
+/**
+ * Create the hero component in home page
+ * @param {Object} props
+ * @param {String} props.subtitles
+ * @param {String} props.children
+ * @returns {JSX.Element}
+ */
+
 function Hero({ subtitles, children }) {
     const listSubtitles = subtitles.map((sub, index) => (
         <HeroSubtitle key={sub + index} className="subtitle">
