@@ -27,7 +27,11 @@ function Profile() {
 
     return login.isLogged ? (
         profile.loading ? (
-            <Loader />
+            <div
+                style={{ flex: '1', display: 'flex', justifyContent: 'center' }}
+            >
+                <Loader type={'big'} />
+            </div>
         ) : (
             <ProfileWrapper>
                 <Welcome

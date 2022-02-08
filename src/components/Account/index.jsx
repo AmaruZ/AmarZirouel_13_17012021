@@ -1,3 +1,5 @@
+import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { StyledButton } from '../../utils/style/Atoms'
 import colors from '../../utils/style/colors'
@@ -58,6 +60,11 @@ const AccountDescription = styled.p`
  */
 
 function Account({ name, balance }) {
+    const navigate = useNavigate()
+    const handleOnClick = useCallback(
+        () => navigate('/transactions', { replace: true }),
+        [navigate]
+    )
     return (
         <AccountContainer>
             <AccountWrapper>
@@ -68,7 +75,9 @@ function Account({ name, balance }) {
                 <AccountDescription>Available Balance</AccountDescription>
             </AccountWrapper>
             <AccountWrapper>
-                <StyledButton>View transactions</StyledButton>
+                <StyledButton onClick={handleOnClick}>
+                    View transactions
+                </StyledButton>
             </AccountWrapper>
         </AccountContainer>
     )

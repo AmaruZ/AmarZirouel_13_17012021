@@ -10,6 +10,8 @@ import Header from './components/Header'
 import { Provider } from 'react-redux'
 import store from './utils/store'
 import GlobalStyle from './utils/style/globalStyles'
+import Transactions from './pages/Transactions'
+import Error from './pages/Error'
 
 ReactDOM.render(
     <Provider store={store}>
@@ -21,6 +23,8 @@ ReactDOM.render(
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/profile" element={<User />} />
+                    <Route path="/transactions" element={<Transactions />} />
+                    <Route path="*" element={<Error />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

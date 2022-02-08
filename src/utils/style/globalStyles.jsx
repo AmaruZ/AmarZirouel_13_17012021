@@ -18,6 +18,9 @@ const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         min-height: 100vh;
     }
+    li{
+        list-style-type: none;
+    }
 `
 
 export default GlobalStyle

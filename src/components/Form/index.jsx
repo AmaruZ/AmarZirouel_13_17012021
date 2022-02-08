@@ -99,7 +99,9 @@ function Form() {
                     }}
                 >
                     {(login.status === 'pending' ||
-                        login.status === 'updating') && <Loader />}
+                        login.status === 'updating') && (
+                        <Loader type={'small'} />
+                    )}
 
                     <span style={{ color: 'red', fontWeight: '600' }}>
                         {login.error && login.error}
